@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>No-03</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('https://img.freepik.com/free-vector/geometric-abstract-background-with-connected-dots-lines_1409-1866.jpg?w=2000');
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    #countrySelect {
+      padding: 10px;
+      font-size: 16px;
+      border: 3px solid #454444;
+      border-radius: 5px;
+      margin-top: 20px;
+      background-color: rgb(165, 255, 251);
+    }
+
+    #capitalDisplay {
+      margin-top: 10px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Country and Capital</h1>
+  </header>
+
+  <div align="center">
+    <h2>Select a Country</h2>
+
+    <select id="countrySelect" onchange="displayCapital()">
+      <option value=""><i>-- Select a Country --</i></option>
+      <option value="usa">United States</option>
+      <option value="uk">United Kingdom</option>
+      <option value="france">France</option>
+      <option value="germany">Germany</option>
+      <option value="japan">Japan</option>
+    </select>
+
+    <p id="capitalDisplay"></p>
+  </div>
+
+  <script>
+    function displayCapital() 
+    {
+      const countrySelect = document.getElementById("countrySelect");
+      const capitalDisplay = document.getElementById("capitalDisplay");
+
+      const selectedCountry = countrySelect.value;
+
+      switch (selectedCountry) {
+        case "usa":
+          capitalDisplay.innerText = "Capital - Washington, D.C.";
+          break;
+        case "uk":
+          capitalDisplay.innerText = "Capital - London";
+          break;
+        case "france":
+          capitalDisplay.innerText = "Capital - Paris";
+          break;
+        case "germany":
+          capitalDisplay.innerText = "Capital - Berlin";
+          break;
+        case "japan":
+          capitalDisplay.innerText = "Capital - Tokyo";
+          break;
+        default:
+          capitalDisplay.innerText = "";
+          break;
+      }
+    }
+  </script>
+</body>
+</html>
